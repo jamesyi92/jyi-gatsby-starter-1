@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
-import HeroA from '../components/HeroA';
+// import HeroA from '../components/HeroA';
+
+import StyledHero from '../components/StyledHero';
+
 import Banner from '../components/Banner';
 import Button from '../components/Button';
 
@@ -10,9 +13,12 @@ import ServicesSection from '../components/Home/ServicesSection';
 
 import Layout from '../layout/Layout';
 
-export default () => (
+export default ({ data }) => (
 		<Layout>
-			<HeroA>
+			<StyledHero
+				home="true"
+				img={ data.defaultBg.childImageSharp.fluid }
+			>
 				<Banner
 					bg="dark" 
 					title="Find Your Dream Destination"
@@ -25,8 +31,20 @@ export default () => (
 						Explore
 					</Button>
 				</Banner>
-			</HeroA>
+			</StyledHero>
 			<IntroSection />
 			<ServicesSection />
 		</Layout>
 	)
+
+export const query = graphql`
+	query {
+	  defaultBg:file(relativePath: {eq: "picture3.jpg"}) {
+	    childImageSharp {
+	      fluid(quality: 90, maxWidth: 4160) {
+	        ...GatsbyImageSharpFluid
+	      }
+	    }
+	  }
+	}
+`;
