@@ -31,8 +31,6 @@ const IntroSection = () => {
 		}
 	`)
 
-	console.log(data);
-
 	return (
 		<Section>
 				<Container>
@@ -45,7 +43,7 @@ const IntroSection = () => {
 
 					<Row className="justify-content-center mb-5">
 						<Col md="8">
-							<Img fluid={ data.file.childImageSharp.fluid } />
+							<Img fluid={ introImage.childImageSharp.fluid } />
 						</Col>
 					</Row>
 
