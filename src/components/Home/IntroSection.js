@@ -7,7 +7,8 @@ import {
 	Col
 } from 'reactstrap';
 
-import Img from '../../images/intropic.jpg';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Button from '../Button';
 import Title from '../Title';
@@ -17,6 +18,20 @@ import intro from '../../constants/intro';
 
 
 const IntroSection = () => {
+
+	const { introImage } = useStaticQuery(graphql`
+		query IntroImageQuery {
+		  introImage:file(relativePath: {eq: "intropic.jpg"}) {
+		    childImageSharp {
+		      fluid {
+		        ...GatsbyImageSharpFluid
+		      }
+		    }
+		  }
+		}
+	`)
+
+	console.log(data);
 
 	return (
 		<Section>
@@ -30,7 +45,7 @@ const IntroSection = () => {
 
 					<Row className="justify-content-center mb-5">
 						<Col md="8">
-							<img src={ Img } className="img-fluid" alt="Intro" />
+							<Img fluid={ data.file.childImageSharp.fluid } />
 						</Col>
 					</Row>
 

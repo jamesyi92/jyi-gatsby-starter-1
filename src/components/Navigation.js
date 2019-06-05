@@ -67,7 +67,7 @@ class Navigation extends Component {
 
         <StyledNavbar light expand="md">
           <Container>
-          	<Link className="navbar-brand" to="/">Logo</Link>
+          	<Link className="navbar-brand" to="/">Boilerplate Logo</Link>
           	<StyledNavToggler className="d-block d-md-none" onClick={this.toggle} />
           	<Collapse isOpen={this.state.isOpen} navbar>
           	  <Nav className="ml-auto" navbar>

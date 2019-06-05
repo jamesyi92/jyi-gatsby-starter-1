@@ -1,11 +1,15 @@
 import React from 'react';
-
+import { graphql } from 'gatsby';
 import Layout from '../layout/Layout';
 
 const BlogPage = () => {
+
+
 	return (
 		<Layout>
-			<div>Hello from blog page</div>
+			<div>
+				
+	   	</div>
 		</Layout>
 	)
 }
