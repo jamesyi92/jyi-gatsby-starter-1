@@ -17,7 +17,7 @@ export default ({ data }) => (
 		<Layout>
 			<StyledHero
 				home="true"
-				img={ data.defaultBg.childImageSharp.fluid }
+				img={ data.bgImg.childImageSharp.fluid }
 			>
 				<Banner
 					bg="dark" 
@@ -39,7 +39,7 @@ export default ({ data }) => (
 
 export const query = graphql`
 	query {
-	  defaultBg:file(relativePath: {eq: "picture3.jpg"}) {
+	  bgImg:file(relativePath: {eq: "picture3.jpg"}) {
 	    childImageSharp {
 	      fluid(quality: 90, maxWidth: 4160) {
 	        ...GatsbyImageSharpFluid

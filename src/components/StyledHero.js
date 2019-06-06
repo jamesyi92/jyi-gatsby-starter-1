@@ -4,7 +4,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 const StyledBackgroundImage = styled(BackgroundImage)`
 	min-height: ${props => props.home ? '80vh' : '500px'};
-	background: ${props => props.home ? 'rgba(0,0,0, .5)' : 'none'};
+	background: rgba(0,0,0, .5);
 	background-position: center;
 	background-size: cover;
 	opacity: 1!important;
